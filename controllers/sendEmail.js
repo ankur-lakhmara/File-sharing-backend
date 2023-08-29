@@ -6,12 +6,12 @@ const sendEmail = async (email, downloadUrl) => {
     port: 465,
     secure: true,
     auth: {
-      user: "auth.nodejstesting@zohomail.in",
-      pass: "cpC5pbh29jPd",
+      user: "authomail.in",
+      pass: "cpPd",
     },
   });
   const info = await transporter.sendMail({
-    from: "auth.nodejstesting@zohomail.in",
+    from: "auth.nail.in",
     to: email,
     subject: "Download your file",
     text: `click to download the file : ${downloadUrl}`,
