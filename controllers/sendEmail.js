@@ -7,12 +7,21 @@ const sendEmail = async (email, downloadUrl) => {
     port: 465,
     secure: true,
     auth: {
+<<<<<<< HEAD
       user: process.env.email_id,
       pass: process.env.email_pass,
     },
   });
   const info = await transporter.sendMail({
     from: process.env.email_id,
+=======
+      user: "authomail.in",
+      pass: "cpPd",
+    },
+  });
+  const info = await transporter.sendMail({
+    from: "auth.nail.in",
+>>>>>>> 72776554817f0301e542eb190f06495a3f114956
     to: email,
     subject: "Download your file",
     text: `click to download the file : ${downloadUrl}`,
