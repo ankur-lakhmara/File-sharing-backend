@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const env = require("dotenv");
 
 const sendEmail = async (email, downloadUrl) => {
   let transporter = nodemailer.createTransport({
@@ -6,12 +7,12 @@ const sendEmail = async (email, downloadUrl) => {
     port: 465,
     secure: true,
     auth: {
-      user: "auth.nodejstesting@zohomail.in",
-      pass: "cpC5pbh29jPd",
+      user: process.env.email_id,
+      pass: process.env.email_pass,
     },
   });
   const info = await transporter.sendMail({
-    from: "auth.nodejstesting@zohomail.in",
+    from: process.env.email_id,
     to: email,
     subject: "Download your file",
     text: `click to download the file : ${downloadUrl}`,

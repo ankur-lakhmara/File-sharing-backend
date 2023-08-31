@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const fileRoutes = require("./routes/fileRoutes");
 const authRoutes = require("./routes/authRoutes");
 const app = express();
+const env = require("dotenv");
 
 app.use(express.json());
 
@@ -14,7 +15,7 @@ mongoose
   })
   .then(() => console.log("connected to the db"))
   .catch(() => console.error("Error in connting db"));
-
+console.log(process.env.email_id);
 app.use("/api/files", fileRoutes);
 app.use("/api/auth", authRoutes);
 const port = process.env.PORT || 3000;
